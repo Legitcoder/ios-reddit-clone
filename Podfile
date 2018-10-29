@@ -8,4 +8,5 @@ target 'Reddit Clone' do
   # Pods for Reddit Clone
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 end

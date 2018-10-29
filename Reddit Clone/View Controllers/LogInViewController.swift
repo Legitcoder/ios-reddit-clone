@@ -25,5 +25,13 @@ class LogInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBOutlet weak var dismissButton: UIButton!
+    
+    @IBAction func handleDismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
 }
