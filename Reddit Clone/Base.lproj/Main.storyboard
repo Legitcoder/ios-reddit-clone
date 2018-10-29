@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-31.199999999999999" y="142.57871064467767"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="3OA-pZ-RZz">
             <objects>
-                <viewController id="BTq-Sq-pyA" sceneMemberID="viewController">
+                <viewController id="BTq-Sq-pyA" customClass="LogInViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zqc-aU-FUK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="764" y="520"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="M1B-8U-PhV">
             <objects>
-                <viewController id="NQJ-e0-Cvr" sceneMemberID="viewController">
+                <viewController id="NQJ-e0-Cvr" customClass="SignUpViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NLx-5E-tru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
