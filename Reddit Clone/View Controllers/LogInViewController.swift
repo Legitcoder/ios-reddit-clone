@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -31,7 +31,15 @@ class LogInViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func logIn(_ sender: Any) {
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else { return }
+        UserController.logIn(email: email, password: password)
+        dismiss(animated: true, completion: nil)
+    }
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     
 }
