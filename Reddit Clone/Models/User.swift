@@ -10,5 +10,8 @@ import Foundation
 
 
 struct User {
-    
+    let id: String = UUID().uuidString
+    var email: String
+    let username: String
+    var password: String
 }

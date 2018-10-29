@@ -10,5 +10,7 @@ import Foundation
 
 
 struct Post {
-    
+    let id: String = UUID().uuidString
+    var title: String
+    var body: String
 }

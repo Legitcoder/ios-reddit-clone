@@ -10,5 +10,7 @@ import Foundation
 
 
 class PostController {
-    // Methods for Post
+    func createPost(title: String, body: String) {
+        
+    }
 }

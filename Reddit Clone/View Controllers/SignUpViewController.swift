@@ -36,13 +36,16 @@ class SignUpViewController: UIViewController {
     @IBAction func createAccount(_ sender: Any) {
         guard let username = usernameTextField.text,
         let email = emailTextField.text,
-            let password = passwordTextField.text else { return }
-        UserController.createUser(username: username, email: email, password: password)
-        dismiss(animated: true, completion: nil)
-        
+        let password = passwordTextField.text else { return }
+        userController?.createUser(username: username, email: email, password: password, completiton: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        })
+
     }
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var userController: UserController?
 }

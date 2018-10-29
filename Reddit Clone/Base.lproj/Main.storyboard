@@ -38,7 +38,7 @@
                         <viewLayoutGuide key="safeArea" id="1TD-vh-SN1"/>
                     </view>
                     <connections>
-                        <segue destination="07a-fb-8BY" kind="show" identifier="ToHomeScreen" id="UFp-Uf-rWD"/>
+                        <segue destination="07a-fb-8BY" kind="show" identifier="ToPostsViewScreen" id="UFp-Uf-rWD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HiQ-Ad-KvR" userLabel="First Responder" sceneMemberID="firstResponder"/>

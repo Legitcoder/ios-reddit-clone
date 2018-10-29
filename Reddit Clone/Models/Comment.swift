@@ -10,5 +10,6 @@ import Foundation
 
 
 struct Comment {
-    
+    let id: String = UUID().uuidString
+    var body: String
 }
