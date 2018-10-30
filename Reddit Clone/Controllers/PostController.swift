@@ -32,25 +32,26 @@ class PostController {
         return Post(id: id, title: title, body: body, user: user)
     }
     
-    func convertUserDictionaryToUser
+    func convertUserDictionaryToUser(userDictionary: [String: Any]) -> User? {
+        guard let username = userDictionary["username"] as? String else { return nil }
+        guard let email = userDictionary["email"] as? String else { return nil }
+        guard let id = userDictionary["id"] as? String else { return nil }
+        return User(id: id, email: email, username: username)
+    }
     
     
-    func getPosts() {
+    func getPosts(completion: @escaping (Error?) -> Void) {
         ref.child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
             guard let postDictionaries = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values else { return }
             for postDictionary in postDictionaries {
                 guard let postId = postDictionary["id"] as? String else { return }
                 self.ref.child("postUsers").child(postId).observeSingleEvent(of: .value) { (snapshot) in
-                    
                     guard let firebaseUser = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values.first else { return }
-                    
-                    guard let username = firebaseUser["username"] as? String else { return }
-                    guard let email = firebaseUser["email"] as? String else { return }
-                    guard let id = firebaseUser["id"] as? String else { return }
-                    
-                    let user = User(id: id, email: email, username: username)
+                    guard let user = self.convertUserDictionaryToUser(userDictionary: firebaseUser) else { return }
                     guard let post = self.convertPostDictionaryToPost(postDictionary: postDictionary, user: user) else { return }
                     self.posts.append(post)
+                    print("Total Posts: \(self.posts.count)")
+                    completion(nil)
                 }
             }
             
