@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
         guard let username = usernameTextField.text,
         let email = emailTextField.text,
         let password = passwordTextField.text else { return }
-        userController?.createUser(username: username, email: email, password: password, completiton: { (_) in
+        UserController.createUser(username: username, email: email, password: password, completion: { (_) in
             self.dismiss(animated: true, completion: nil)
         })
 
@@ -47,5 +47,5 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var userController: UserController?
+
 }

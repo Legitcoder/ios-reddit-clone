@@ -7,8 +7,12 @@
 //
 
 import Foundation
-
+import Firebase
 
 class CommentController {
-    // Methods for Comment
+    let ref: DatabaseReference!
+    
+    init() {
+        self.ref = Database.database().reference()
+    }
 }

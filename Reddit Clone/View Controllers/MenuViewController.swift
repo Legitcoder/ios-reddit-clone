@@ -12,30 +12,17 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
+        
         guard let user = Auth.auth().currentUser else {
             NSLog("Error retreiving Current User)")
             return
         }
-        performSegue(withIdentifier: "ToPostsViewScreen", sender: self)
-    }
 
-  
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SignUpViewController {
-            destination.userController = self.userController
-        }
-    }
-
+        self.performSegue(withIdentifier: "ToPostsViewScreen", sender: self)
     
-    let userController = UserController()
-
+    }
 }

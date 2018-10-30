@@ -73,6 +73,7 @@
                                 <state key="normal" title="CREATE ACCOUNT"/>
                                 <connections>
                                     <action selector="createAccount:" destination="BTq-Sq-pyA" eventType="touchUpInside" id="ce6-Mf-8K6"/>
+                                    <segue destination="07a-fb-8BY" kind="show" identifier="SignUpToPosts" id="FTx-pE-wH2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7W-N5-Izf">
@@ -143,6 +144,7 @@
                                 <state key="normal" title="LOG IN"/>
                                 <connections>
                                     <action selector="logIn:" destination="NQJ-e0-Cvr" eventType="touchUpInside" id="7cv-39-E4o"/>
+                                    <segue destination="07a-fb-8BY" kind="show" identifier="LoginToPosts" id="AON-cr-mfo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUW-LP-Hsy">
@@ -237,4 +239,7 @@
             <point key="canvasLocation" x="1740" y="143"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UFp-Uf-rWD"/>
+    </inferredMetricsTieBreakers>
 </document>

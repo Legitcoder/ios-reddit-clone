@@ -10,8 +10,15 @@ import Foundation
 
 
 struct User {
-    let id: String = UUID().uuidString
+    let id: String
     var email: String
     let username: String
-    var password: String
+    var password: String?
+    
+    init(id: String, email: String, username: String, password: String? = nil) {
+        self.id = id
+        self.email = email
+        self.username = username
+        self.password = password
+    }
 }

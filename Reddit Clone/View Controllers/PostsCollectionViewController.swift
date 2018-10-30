@@ -7,14 +7,26 @@
 //
 
 import UIKit
-
+import Firebase
 private let reuseIdentifier = "Cell"
 
 class PostsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard let user = Auth.auth().currentUser else {
+            NSLog("Error retreiving Current User)")
+            return
+        }
+        userController.fetchCurrentUser(userId: user.uid) { (user, _) in
+            self.currentUser = user
+            //self.postController.createPost(title: "Yo", body: "This is a test Post", user: self.currentUser!)
+        }
+        
+        postController.getPosts()
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -92,5 +104,10 @@ class PostsCollectionViewController: UICollectionViewController {
     
     }
     */
-
+    
+    
+    let userController = UserController()
+    let postController = PostController()
+    var currentUser: User?
+    
 }
