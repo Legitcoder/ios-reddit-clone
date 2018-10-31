@@ -15,34 +15,14 @@ class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Posts", style: .plain, target: nil, action: nil)
         getUser()
-        //getnewestPost()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getPosts()
     }
     
     @IBAction func logOut(_ sender: Any) {
         UserController.logout()
         dismiss(animated: true, completion: nil)
     }
-    
-    func getnewestPost() {
-        postController.getNewestPost { (_) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func getnewPost() {
-        postController.getNewPost { (_) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+
     
     func getPosts() {
         postController.getPosts { (_) in
@@ -61,8 +41,6 @@ class PostsTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.currentUser = user
                 self.title = user.username
-                //self.postController.createPost(title: "This a long title on purpose", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mi at nunc tristique luctus a in dolor. Etiam placerat maximus urna, eu imperdiet tellus vestibulum et. Pellentesque ac dolor nec erat fringilla porta vel a metus. Phasellus ultricies tellus et convallis eleifend. Vestibulum vestibulum mi volutpat ex hendrerit, vitae pellentesque nisi suscipit. Cras aliquet est nulla, interdum volutpat lorem volutpat eu. Vestibulum feugiat aliquet euismod. Sed dapibus nisl nec dapibus pretium. Nam semper, elit quis commodo sodales, nunc metus rhoncus turpis, eu elementum turpis velit in sem. Quisque consequat posuere lacus, sed pellentesque erat varius egestas. Duis condimentum libero non mauris lacinia, ut volutpat nisl imperdiet.", user: user)
-                self.getnewPost()
             }
         }
     }
