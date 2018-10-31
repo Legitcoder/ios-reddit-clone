@@ -20,5 +20,20 @@ class CommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func updateViews() {
+        guard let comment = comment else { return }
+        usernameLabel.text = comment.user.username
+        commentBodyTextView.text = comment.body
+    }
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var commentBodyTextView: UITextView!
+    
+    var comment: Comment? {
+        didSet {
+            updateViews()
+        }
+    }
+    
 }

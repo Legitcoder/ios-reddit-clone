@@ -12,35 +12,36 @@ class CommentTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //commentController.createComment(body: "This is a comment by moin", user: currentUser! , post: post!)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Comments", style: .plain, target: nil, action: nil)
+        commentController.getCommentsOfPost(post: post!) { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
 
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return commentController.comments.count
     }
 
-    /*
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
+        let comment = commentController.comments[indexPath.row]
+        cell.comment = comment
         // Configure the cell...
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +87,11 @@ class CommentTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    var postController: PostController?
+    var userController: UserController?
+    let commentController = CommentController()
+    var post: Post?
+    var currentUser: User?
 
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		95F616FABDFEA398D1AF7CD6 /* Pods_Reddit_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACAA4F42D8BC9660AADBE93 /* Pods_Reddit_Clone.framework */; };
 		A13A1C3B218692A7001BC7E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */; };
+		A15E594E218971CC00DDCE99 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */; };
+		A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */; };
 		A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */; };
 		A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */; };
 		A19CC7A621891ABA00B7CBD0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,11 +116,13 @@
 		A1F203FD2186BB980067E672 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */,
 				A19CC7A721892DBA00B7CBD0 /* CommentTableViewController.swift */,
 				A19CC7A921892DCE00B7CBD0 /* CommentTableViewCell.swift */,
 				A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */,
 				A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */,
 				A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */,
+				A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */,
 				A1F203FB2186BB8F0067E672 /* LogInViewController.swift */,
 				A1F203F92186BB7C0067E672 /* SignUpViewController.swift */,
 			);
@@ -281,10 +287,12 @@
 				A1F204062186BCAA0067E672 /* UserController.swift in Sources */,
 				A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */,
 				A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */,
+				A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */,
 				A1F204022186BC400067E672 /* PostController.swift in Sources */,
 				A19CC7A821892DBA00B7CBD0 /* CommentTableViewController.swift in Sources */,
 				A1F203FA2186BB7C0067E672 /* SignUpViewController.swift in Sources */,
 				A1F2040B2186BCF20067E672 /* Comment.swift in Sources */,
+				A15E594E218971CC00DDCE99 /* PostDetailViewController.swift in Sources */,
 				A19CC7A621891ABA00B7CBD0 /* PostTableViewCell.swift in Sources */,
 				A1C1D7D921868B9F00DC923D /* AppDelegate.swift in Sources */,
 				A1F203FC2186BB8F0067E672 /* LogInViewController.swift in Sources */,

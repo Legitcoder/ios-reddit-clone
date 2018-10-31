@@ -13,7 +13,7 @@ class PostsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Posts", style: .plain, target: nil, action: nil)
         guard let user = Auth.auth().currentUser else {
             NSLog("Error retreiving Current User)")
             return
@@ -103,15 +103,22 @@ class PostsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ViewPost" {
+            guard let destination = segue.destination as? CommentTableViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let post = postController.posts[indexPath.row]
+            destination.post = post
+            destination.userController = userController
+            destination.postController = postController
+            destination.currentUser = currentUser
+        }
+        
     }
-    */
+ 
     let userController = UserController()
     let postController = PostController()
     var currentUser: User?

@@ -11,7 +11,6 @@ import UIKit
 class PostTableViewCell: UITableViewCell {
 
     func updateViews() {
-        
         guard let post = post else { return }
         usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
