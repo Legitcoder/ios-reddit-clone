@@ -17,6 +17,11 @@ class PostDetailViewController: UIViewController {
     }
     
     @IBAction func savePost(_ sender: Any) {
+        guard let title = postTitleTextField.text,
+            let body = postBodyTextView.text,
+            let currentUser = currentUser else { return }
+        postController?.createPost(title: title, body: body, user: currentUser)
+        navigationController?.popViewController(animated: true)
     }
     
     /*
@@ -28,5 +33,11 @@ class PostDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBOutlet weak var postTitleTextField: UITextField!
+    @IBOutlet weak var postBodyTextView: UITextView!
+    
+    var postController: PostController?
+    var currentUser: User?
 
 }

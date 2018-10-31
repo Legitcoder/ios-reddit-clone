@@ -16,7 +16,10 @@ class CommentDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addComment(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +29,13 @@ class CommentDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+
+    @IBOutlet weak var commentBodyTextView: UITextView!
+    
+    
+    var commentController: CommentController?
+    var currentUser: User?
 
 }

@@ -19,7 +19,6 @@ class PostController {
     
     func createPost(title: String, body: String, user: User) {
         let post =  Post(title: title, body: body, user: user)
-        posts.append(post)
         //Save User to Firebase DataBase
         ref.child("posts").child(post.id).setValue([ "id": post.id, "title": post.title, "body": post.body ])
         ref.child("postUsers").child(post.id).child(user.id).setValue([ "id": user.id, "username": user.username, "email": user.email ])
@@ -38,6 +37,44 @@ class PostController {
         guard let id = userDictionary["id"] as? String else { return nil }
         return User(id: id, email: email, username: username)
     }
+    
+    func getNewPost(completion: @escaping (Error?) -> Void) {
+        ref.child("posts").observe(.childAdded, with: { (snapshot) in
+            guard let postDictionary = snapshot.value as? [String: Any] else { return }
+            guard let postId = postDictionary["id"] as? String else { return }
+            self.ref.child("postUsers").child(postId).observeSingleEvent(of: .value) { (snapshot) in
+                guard let firebaseUser = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values.first else { return }
+                guard let user = self.convertUserDictionaryToUser(userDictionary: firebaseUser) else { return }
+                guard let post = self.convertPostDictionaryToPost(postDictionary: postDictionary, user: user) else { return }
+                self.posts.append(post)
+                print("Total Posts: \(self.posts.count)")
+                completion(nil)
+            }
+            
+            
+        })
+    }
+    
+    func getNewestPost(completion: @escaping (Error?) -> Void) {
+        self.posts = []
+        ref.child("posts").observeSingleEvent(of: .childAdded, with: { (snapshot) in
+            guard let postDictionary = snapshot.value as? [String: Any] else { return }
+            guard let postId = postDictionary["id"] as? String else { return }
+            self.ref.child("postUsers").child(postId).observeSingleEvent(of: .value) { (snapshot) in
+                guard let firebaseUser = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values.first else { return }
+                guard let user = self.convertUserDictionaryToUser(userDictionary: firebaseUser) else { return }
+                guard let post = self.convertPostDictionaryToPost(postDictionary: postDictionary, user: user) else { return }
+                
+                self.posts.append(post)
+                print("Total Posts: \(self.posts.count)")
+                completion(nil)
+            }
+            
+            
+        })
+    }
+    
+    
     
     
     func getPosts(completion: @escaping (Error?) -> Void) {

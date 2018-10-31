@@ -14,24 +14,8 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Posts", style: .plain, target: nil, action: nil)
-        guard let user = Auth.auth().currentUser else {
-            NSLog("Error retreiving Current User)")
-            return
-        }
-        userController.fetchCurrentUser(userId: user.uid) { (user, _) in
-            DispatchQueue.main.async {
-                self.currentUser = user
-                self.title = user.username
-                //self.postController.createPost(title: "This a long title on purpose", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mi at nunc tristique luctus a in dolor. Etiam placerat maximus urna, eu imperdiet tellus vestibulum et. Pellentesque ac dolor nec erat fringilla porta vel a metus. Phasellus ultricies tellus et convallis eleifend. Vestibulum vestibulum mi volutpat ex hendrerit, vitae pellentesque nisi suscipit. Cras aliquet est nulla, interdum volutpat lorem volutpat eu. Vestibulum feugiat aliquet euismod. Sed dapibus nisl nec dapibus pretium. Nam semper, elit quis commodo sodales, nunc metus rhoncus turpis, eu elementum turpis velit in sem. Quisque consequat posuere lacus, sed pellentesque erat varius egestas. Duis condimentum libero non mauris lacinia, ut volutpat nisl imperdiet.", user: user)
-            }
-        }
-        
-        postController.getPosts { (_) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-        }
+        getUser()
+        //getnewestPost()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,9 +28,43 @@ class PostsTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func getnewestPost() {
+        postController.getNewestPost { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
-    @IBAction func addPost(_ sender: Any) {
-        
+    func getnewPost() {
+        postController.getNewPost { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func getPosts() {
+        postController.getPosts { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func getUser() {
+        guard let user = Auth.auth().currentUser else {
+            NSLog("Error retreiving Current User)")
+            return
+        }
+        userController.fetchCurrentUser(userId: user.uid) { (user, _) in
+            DispatchQueue.main.async {
+                self.currentUser = user
+                self.title = user.username
+                //self.postController.createPost(title: "This a long title on purpose", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mi at nunc tristique luctus a in dolor. Etiam placerat maximus urna, eu imperdiet tellus vestibulum et. Pellentesque ac dolor nec erat fringilla porta vel a metus. Phasellus ultricies tellus et convallis eleifend. Vestibulum vestibulum mi volutpat ex hendrerit, vitae pellentesque nisi suscipit. Cras aliquet est nulla, interdum volutpat lorem volutpat eu. Vestibulum feugiat aliquet euismod. Sed dapibus nisl nec dapibus pretium. Nam semper, elit quis commodo sodales, nunc metus rhoncus turpis, eu elementum turpis velit in sem. Quisque consequat posuere lacus, sed pellentesque erat varius egestas. Duis condimentum libero non mauris lacinia, ut volutpat nisl imperdiet.", user: user)
+                self.getnewPost()
+            }
+        }
     }
     
 
@@ -115,6 +133,10 @@ class PostsTableViewController: UITableViewController {
             destination.userController = userController
             destination.postController = postController
             destination.currentUser = currentUser
+        } else if segue.identifier == "NewPost" {
+             guard let destination = segue.destination as? PostDetailViewController else { return }
+            destination.currentUser = userController.currentUser
+            destination.postController = postController
         }
         
     }
