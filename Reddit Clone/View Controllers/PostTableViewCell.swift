@@ -1,5 +1,5 @@
 //
-//  PostCollectionViewCell.swift
+//  PostTableViewCell.swift
 //  Reddit Clone
 //
 //  Created by Moin Uddin on 10/30/18.
@@ -8,18 +8,17 @@
 
 import UIKit
 
-class PostCollectionViewCell: UICollectionViewCell {
-    
-    
+class PostTableViewCell: UITableViewCell {
+
     func updateViews() {
         
         guard let post = post else { return }
-        userLabel.text = post.user.username
+        usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
         postBodyTextView.text = post.body
     }
     
-    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postBodyTextView: UITextView!
     
@@ -29,4 +28,5 @@ class PostCollectionViewCell: UICollectionViewCell {
             updateViews()
         }
     }
+
 }

@@ -10,8 +10,8 @@
 		95F616FABDFEA398D1AF7CD6 /* Pods_Reddit_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACAA4F42D8BC9660AADBE93 /* Pods_Reddit_Clone.framework */; };
 		A13A1C3B218692A7001BC7E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */; };
 		A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */; };
-		A19CC7A02187A9B400B7CBD0 /* PostsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC79F2187A9B400B7CBD0 /* PostsCollectionViewController.swift */; };
-		A19CC7A221890E1E00B7CBD0 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A121890E1E00B7CBD0 /* PostCollectionViewCell.swift */; };
+		A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */; };
+		A19CC7A621891ABA00B7CBD0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */; };
 		A1C1D7D921868B9F00DC923D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C1D7D821868B9F00DC923D /* AppDelegate.swift */; };
 		A1C1D7DE21868B9F00DC923D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C1D7DC21868B9F00DC923D /* Main.storyboard */; };
 		A1C1D7E021868BA100DC923D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C1D7DF21868BA100DC923D /* Assets.xcassets */; };
@@ -29,8 +29,8 @@
 /* Begin PBXFileReference section */
 		A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		A19CC79F2187A9B400B7CBD0 /* PostsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCollectionViewController.swift; sourceTree = "<group>"; };
-		A19CC7A121890E1E00B7CBD0 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		A1C1D7D521868B9F00DC923D /* Reddit Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C1D7D821868B9F00DC923D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1C1D7DD21868B9F00DC923D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		A1F203FD2186BB980067E672 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A19CC79F2187A9B400B7CBD0 /* PostsCollectionViewController.swift */,
-				A19CC7A121890E1E00B7CBD0 /* PostCollectionViewCell.swift */,
+				A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */,
+				A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */,
 				A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */,
 				A1F203FB2186BB8F0067E672 /* LogInViewController.swift */,
 				A1F203F92186BB7C0067E672 /* SignUpViewController.swift */,
@@ -274,13 +274,13 @@
 			files = (
 				A1F204062186BCAA0067E672 /* UserController.swift in Sources */,
 				A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */,
-				A19CC7A02187A9B400B7CBD0 /* PostsCollectionViewController.swift in Sources */,
+				A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */,
 				A1F204022186BC400067E672 /* PostController.swift in Sources */,
 				A1F203FA2186BB7C0067E672 /* SignUpViewController.swift in Sources */,
 				A1F2040B2186BCF20067E672 /* Comment.swift in Sources */,
+				A19CC7A621891ABA00B7CBD0 /* PostTableViewCell.swift in Sources */,
 				A1C1D7D921868B9F00DC923D /* AppDelegate.swift in Sources */,
 				A1F203FC2186BB8F0067E672 /* LogInViewController.swift in Sources */,
-				A19CC7A221890E1E00B7CBD0 /* PostCollectionViewCell.swift in Sources */,
 				A1F2040D2186BD090067E672 /* Post.swift in Sources */,
 				A1F204042186BC8A0067E672 /* CommentController.swift in Sources */,
 				A1F204092186BCDD0067E672 /* User.swift in Sources */,
