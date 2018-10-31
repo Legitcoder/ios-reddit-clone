@@ -17,7 +17,11 @@ class CommentDetailViewController: UIViewController {
     }
     
     @IBAction func addComment(_ sender: Any) {
-        
+        guard let body = commentBodyTextView.text,
+            let currentUser = currentUser,
+            let post = post else { return }
+        commentController?.createComment(body: body, user: currentUser, post: post)
+        navigationController?.popViewController(animated: true)
     }
     
     /*
@@ -37,5 +41,6 @@ class CommentDetailViewController: UIViewController {
     
     var commentController: CommentController?
     var currentUser: User?
+    var post: Post?
 
 }

@@ -25,7 +25,6 @@ class UserController {
             guard let username = firebaseUser["username"] as? String else { return }
             guard let email = firebaseUser["email"] as? String else { return }
             let user = User(id: userId, email: email, username: username)
-            //self.users.append(user)
             self.currentUser = user
             completion(user, nil)
         }
