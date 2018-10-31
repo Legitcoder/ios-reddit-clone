@@ -273,7 +273,7 @@
             </objects>
             <point key="canvasLocation" x="3400.8000000000002" y="142.57871064467767"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Post-->
         <scene sceneID="d0N-cP-Dlc">
             <objects>
                 <viewController id="atA-cC-TXd" sceneMemberID="viewController">
@@ -299,15 +299,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8M4-pd-cO6"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create Post" id="HJN-Y9-wZg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noA-Yk-XPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4223.1999999999998" y="-334.18290854572717"/>
+            <point key="canvasLocation" x="4206" y="-199"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Comment Table View Controller-->
         <scene sceneID="nz9-A3-jQL">
             <objects>
-                <tableViewController id="yh4-81-uDv" sceneMemberID="viewController">
+                <tableViewController id="yh4-81-uDv" customClass="CommentTableViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rAK-vv-N3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,7 +345,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="105" id="sMS-14-1PE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="105" id="sMS-14-1PE" customClass="CommentTableViewCell" customModule="Reddit_Clone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="257" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMS-14-1PE" id="7pD-fe-Ys4">
@@ -361,7 +362,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yA9-8k-Nen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4490.3999999999996" y="133.5832083958021"/>
+            <point key="canvasLocation" x="4206" y="481"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HeQ-Lw-s4c">
