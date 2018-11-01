@@ -23,6 +23,9 @@ class CommentTableViewCell: UITableViewCell {
     
     func updateViews() {
         guard let comment = comment else { return }
+        if comment.user.username != currentUser?.username {
+            editButton.isHidden = true
+        }
         usernameLabel.text = comment.user.username
         usernameLabel.textColor = .white
         
@@ -30,6 +33,7 @@ class CommentTableViewCell: UITableViewCell {
         commentBodyTextView.backgroundColor = Appearance.darkGray
     }
     
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var commentBodyTextView: UITextView!
     
@@ -38,5 +42,6 @@ class CommentTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    var currentUser: User?
     
 }

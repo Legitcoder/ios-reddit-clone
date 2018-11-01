@@ -16,6 +16,9 @@ class PostContainerViewController: UIViewController {
         view.backgroundColor = Appearance.darkGray
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        updateViews()
+    }
     
     override func viewDidLayoutSubviews() {
         view.layer.addBorder(edge: .bottom, color: .white, thickness: 1)
@@ -42,6 +45,7 @@ class PostContainerViewController: UIViewController {
             guard let destination = segue.destination as? PostDetailViewController else { return }
             destination.post = post
             destination.currentUser = currentUser
+            destination.postController = postController
         }
     }
   
@@ -61,4 +65,5 @@ class PostContainerViewController: UIViewController {
         }
     }
     var currentUser: User?
+    var postController: PostController?
 }

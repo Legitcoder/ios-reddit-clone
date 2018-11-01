@@ -24,7 +24,12 @@ class PostController {
         ref.child("postUsers").child(post.id).child(user.id).setValue([ "id": user.id, "username": user.username, "email": user.email ])
     }
     func updatePost(title: String, body: String, user: User, post: Post) {
-        
+        guard let index = posts.index(of: post) else { return }
+        print(posts[index].title)
+        posts[index].title = title
+        posts[index].body = body
+        //Save User to Firebase DataBase
+        ref.child("posts").child(post.id).updateChildValues([ "id": post.id, "title": title, "body": body ])
     }
     
     func convertPostDictionaryToPost(postDictionary: [String: Any], user: User) -> Post? {

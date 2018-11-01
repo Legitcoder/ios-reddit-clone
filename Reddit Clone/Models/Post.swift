@@ -9,7 +9,12 @@
 import Foundation
 
 
-struct Post {
+struct Post: Equatable {
+    static func == (lhs: Post, rhs: Post) -> Bool {
+        return lhs.title == rhs.title && lhs.body == rhs.body && lhs.user.username == rhs.user.username
+        && lhs.user.email == rhs.user.email
+    }
+    
     let id: String
     var title: String
     var body: String

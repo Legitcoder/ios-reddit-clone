@@ -29,6 +29,7 @@ class PostDetailViewController: UIViewController {
         guard let title = postTitleTextField.text,
             let body = postBodyTextView.text,
             let currentUser = currentUser else { return }
+        
         if let post = post {
             postController?.updatePost(title: title, body: body, user: currentUser, post: post)
         } else {

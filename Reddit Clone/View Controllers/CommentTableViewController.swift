@@ -37,6 +37,7 @@ class CommentTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
         let comment = commentController.comments[indexPath.row]
+        cell.currentUser = currentUser
         cell.comment = comment
         // Configure the cell...
 
@@ -93,6 +94,7 @@ class CommentTableViewController: UITableViewController {
             guard let destination = segue.destination as? PostContainerViewController else { return }
             destination.post = post
             destination.currentUser = currentUser
+            destination.postController = postController
         }
     }
 
