@@ -12,7 +12,12 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        changeTextFieldHeight(textField: emailTextField, height: 50)
+        changeTextFieldHeight(textField: passwordTextField, height: 50)
+    }
+    
+    func changeTextFieldHeight(textField: UITextField, height: CGFloat) {
+        textField.addConstraint(textField.heightAnchor.constraint(equalToConstant: height))
     }
     
 

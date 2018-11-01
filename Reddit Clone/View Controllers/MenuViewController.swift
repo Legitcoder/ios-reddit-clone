@@ -25,4 +25,9 @@ class MenuViewController: UIViewController {
         self.performSegue(withIdentifier: "ToPostsViewScreen", sender: self)
     
     }
+    @IBOutlet weak var redditTitleLogoImageView: UIImageView!
+    
+    @IBOutlet weak var redditSignUpImageView: UIImageView!
+    
+    
 }

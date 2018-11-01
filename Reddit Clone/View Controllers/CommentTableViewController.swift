@@ -14,7 +14,8 @@ class CommentTableViewController: UITableViewController {
         super.viewDidLoad()
         //commentController.createComment(body: "This is a comment by moin", user: currentUser! , post: post!)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Comments", style: .plain, target: nil, action: nil)
-        commentController.getCommentsOfPost(post: post!) { (_) in
+        guard let post = post else { return }
+        commentController.getCommentsOfPost(post: post) { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -84,7 +85,13 @@ class CommentTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewComment" {
-            
+            guard let destination = segue.destination as? CommentDetailViewController else { return }
+            destination.post = post
+            destination.currentUser = currentUser
+            destination.commentController = commentController
+        } else if segue.identifier == "PostViewContainer" {
+            guard let destination = segue.destination as? PostContainerViewController else { return }
+            destination.post = post
         }
     }
 

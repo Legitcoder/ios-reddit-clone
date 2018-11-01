@@ -50,10 +50,8 @@ class UserController {
             
             //Save User to Firebase DataBase
             Database.database().reference().child("users").child(userId!).setValue(["id": userId!, "username": username, "email": email ])
+            completion(nil)
         }
-
-        
-        completion(nil)
     }
     
     static func logIn(email: String, password: String) {

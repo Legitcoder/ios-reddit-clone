@@ -12,10 +12,15 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        changeTextFieldHeight(textField: usernameTextField, height: 50)
+        changeTextFieldHeight(textField: emailTextField, height: 50)
+        changeTextFieldHeight(textField: passwordTextField, height: 50)
         // Do any additional setup after loading the view.
     }
     
+    func changeTextFieldHeight(textField: UITextField, height: CGFloat) {
+        textField.addConstraint(textField.heightAnchor.constraint(equalToConstant: height))
+    }
 
     /*
     // MARK: - Navigation
