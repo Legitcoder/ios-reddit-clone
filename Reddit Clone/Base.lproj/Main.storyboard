@@ -366,17 +366,17 @@
             <objects>
                 <viewController id="atA-cC-TXd" customClass="PostDetailViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZTa-RF-juf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="301"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-7q-MPG">
-                                <rect key="frame" x="16" y="187" width="343" height="357"/>
+                                <rect key="frame" x="16" y="123" width="343" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMB-3N-d4S">
-                                <rect key="frame" x="16" y="109" width="343" height="30"/>
+                                <rect key="frame" x="16" y="45" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -528,6 +528,7 @@
                                 <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="editPost:" destination="dLh-m2-tkr" eventType="touchUpInside" id="CNj-cS-ViX"/>
+                                    <segue destination="atA-cC-TXd" kind="show" identifier="EditPost" id="XR7-nU-wQn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -614,4 +615,7 @@
         <image name="redditSignUp" width="1131" height="707"/>
         <image name="reddtlogoTitle" width="394" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XR7-nU-wQn"/>
+    </inferredMetricsTieBreakers>
 </document>

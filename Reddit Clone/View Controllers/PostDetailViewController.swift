@@ -14,14 +14,27 @@ class PostDetailViewController: UIViewController {
         super.viewDidLoad()
         postBodyTextView.backgroundColor = Appearance.lightGray
         view.backgroundColor = Appearance.darkGray
+        updateViews()
         // Do any additional setup after loading the view.
+    }
+    
+    private func updateViews() {
+        if let post = post, isViewLoaded {
+            postTitleTextField?.text = post.title
+            postBodyTextView?.text = post.body
+        }
     }
     
     @IBAction func savePost(_ sender: Any) {
         guard let title = postTitleTextField.text,
             let body = postBodyTextView.text,
             let currentUser = currentUser else { return }
-        postController?.createPost(title: title, body: body, user: currentUser)
+        if let post = post {
+            postController?.updatePost(title: title, body: body, user: currentUser, post: post)
+        } else {
+            postController?.createPost(title: title, body: body, user: currentUser)
+        }
+
         navigationController?.popViewController(animated: true)
     }
     
@@ -40,5 +53,10 @@ class PostDetailViewController: UIViewController {
     
     var postController: PostController?
     var currentUser: User?
+    var post: Post? {
+        didSet {
+            updateViews()
+        }
+    }
 
 }

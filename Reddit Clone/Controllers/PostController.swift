@@ -23,6 +23,9 @@ class PostController {
         ref.child("posts").child(post.id).setValue([ "id": post.id, "title": post.title, "body": post.body ])
         ref.child("postUsers").child(post.id).child(user.id).setValue([ "id": user.id, "username": user.username, "email": user.email ])
     }
+    func updatePost(title: String, body: String, user: User, post: Post) {
+        
+    }
     
     func convertPostDictionaryToPost(postDictionary: [String: Any], user: User) -> Post? {
         guard let id = postDictionary["id"] as? String else { return nil }

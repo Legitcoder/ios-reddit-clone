@@ -13,8 +13,6 @@ enum Appearance {
     
     static func setDarkAppearance() {
         
-        
-        
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         UINavigationBar.appearance().titleTextAttributes = attributes
