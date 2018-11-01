@@ -14,6 +14,7 @@
 		A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */; };
 		A15E5984218AD06900DDCE99 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5983218AD06900DDCE99 /* UIImage+Extension.swift */; };
 		A15E5988218B75D200DDCE99 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5987218B75D200DDCE99 /* AppearanceHelper.swift */; };
+		A15E598B218B968100DDCE99 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E598A218B968100DDCE99 /* CALayer+Extension.swift */; };
 		A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */; };
 		A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */; };
 		A19CC7A621891ABA00B7CBD0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */; };
@@ -40,6 +41,7 @@
 		A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContainerViewController.swift; sourceTree = "<group>"; };
 		A15E5983218AD06900DDCE99 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		A15E5987218B75D200DDCE99 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceHelper.swift; path = "/Users/moinuddin/Desktop/IOS Projects/Reddit Clone/Reddit Clone/AppearanceHelper.swift"; sourceTree = "<absolute>"; };
+		A15E598A218B968100DDCE99 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				A1F203FD2186BB980067E672 /* View Controllers */,
 				A1C1D7D821868B9F00DC923D /* AppDelegate.swift */,
 				A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */,
+				A15E598A218B968100DDCE99 /* CALayer+Extension.swift */,
 				A1C1D7DC21868B9F00DC923D /* Main.storyboard */,
 				A1C1D7DF21868BA100DC923D /* Assets.xcassets */,
 				A1C1D7E121868BA100DC923D /* LaunchScreen.storyboard */,
@@ -304,6 +307,7 @@
 				A1F204062186BCAA0067E672 /* UserController.swift in Sources */,
 				A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */,
 				A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */,
+				A15E598B218B968100DDCE99 /* CALayer+Extension.swift in Sources */,
 				A15E5984218AD06900DDCE99 /* UIImage+Extension.swift in Sources */,
 				A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */,
 				A1F204022186BC400067E672 /* PostController.swift in Sources */,

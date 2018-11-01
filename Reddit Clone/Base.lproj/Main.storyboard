@@ -35,7 +35,7 @@
                                     <segue destination="NQJ-e0-Cvr" kind="show" identifier="LogIn" id="LI7-cK-kWh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redditSignUp" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-rO-uBz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redditSignUp" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-rO-uBz">
                                 <rect key="frame" x="57.5" y="254" width="254" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="9GE-it-bc3"/>
@@ -369,22 +369,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-7q-MPG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-7q-MPG">
                                 <rect key="frame" x="16" y="187" width="343" height="357"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMB-3N-d4S">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMB-3N-d4S">
                                 <rect key="frame" x="16" y="109" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8M4-pd-cO6" firstAttribute="bottom" secondItem="6PR-7q-MPG" secondAttribute="bottom" constant="123" id="8IW-hL-3aj"/>
+                            <constraint firstItem="8M4-pd-cO6" firstAttribute="trailing" secondItem="6PR-7q-MPG" secondAttribute="trailing" constant="16" id="Bxs-wq-LSd"/>
+                            <constraint firstItem="6PR-7q-MPG" firstAttribute="leading" secondItem="8M4-pd-cO6" secondAttribute="leading" constant="16" id="E8X-5n-O2w"/>
+                            <constraint firstItem="eMB-3N-d4S" firstAttribute="leading" secondItem="8M4-pd-cO6" secondAttribute="leading" constant="16" id="Lxt-47-Cw1"/>
+                            <constraint firstItem="8M4-pd-cO6" firstAttribute="trailing" secondItem="eMB-3N-d4S" secondAttribute="trailing" constant="16" id="N1m-lq-xKd"/>
+                            <constraint firstItem="6PR-7q-MPG" firstAttribute="top" secondItem="eMB-3N-d4S" secondAttribute="bottom" constant="48" id="cC2-Gs-lhm"/>
+                            <constraint firstItem="eMB-3N-d4S" firstAttribute="top" secondItem="8M4-pd-cO6" secondAttribute="top" constant="45" id="iNn-jS-8yx"/>
+                            <constraint firstItem="6PR-7q-MPG" firstAttribute="top" secondItem="eMB-3N-d4S" secondAttribute="bottom" constant="48" id="sz3-34-JPb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8M4-pd-cO6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Post" id="HJN-Y9-wZg">
@@ -518,6 +526,9 @@
                                 <rect key="frame" x="313" y="0.0" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editPost:" destination="dLh-m2-tkr" eventType="touchUpInside" id="CNj-cS-ViX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -530,6 +541,7 @@
                         <viewLayoutGuide key="safeArea" id="U1c-qt-54Y"/>
                     </view>
                     <connections>
+                        <outlet property="editPostButton" destination="lQQ-6g-U2k" id="tty-79-U8J"/>
                         <outlet property="postBodyTextView" destination="2M6-sS-UbT" id="fBV-Jf-nHw"/>
                         <outlet property="postTitleLabel" destination="jnP-z1-H6w" id="zTq-b5-yxI"/>
                         <outlet property="usernameLabel" destination="wc3-sf-eqE" id="LCl-O8-G18"/>
@@ -565,15 +577,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bMO-Ci-SFE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bMO-Ci-SFE">
                                 <rect key="frame" x="16" y="99" width="343" height="529"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zgi-aX-sLm" firstAttribute="trailing" secondItem="bMO-Ci-SFE" secondAttribute="trailing" constant="16" id="0Vk-C3-ixd"/>
+                            <constraint firstItem="Zgi-aX-sLm" firstAttribute="bottom" secondItem="bMO-Ci-SFE" secondAttribute="bottom" constant="39" id="OpF-pR-Ypc"/>
+                            <constraint firstItem="bMO-Ci-SFE" firstAttribute="leading" secondItem="Zgi-aX-sLm" secondAttribute="leading" constant="16" id="at9-mu-mSs"/>
+                            <constraint firstItem="bMO-Ci-SFE" firstAttribute="top" secondItem="Zgi-aX-sLm" secondAttribute="top" constant="35" id="b5p-dC-tO6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zgi-aX-sLm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Comment" id="1wV-tl-OQo">

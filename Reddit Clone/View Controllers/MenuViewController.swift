@@ -12,6 +12,8 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        redditSignUpImageView.layer.borderWidth = 5
+        redditSignUpImageView.layer.borderColor = UIColor.black.cgColor
     }
     
     

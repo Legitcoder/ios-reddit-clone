@@ -17,8 +17,16 @@ class PostContainerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidLayoutSubviews() {
+        view.layer.addBorder(edge: .bottom, color: .white, thickness: 1)
+    }
+    
     func updateViews() {
-        guard let post = post, isViewLoaded else { return }
+        guard let post = post, let currentUser = currentUser, isViewLoaded else { return }
+        
+        if post.user.username != currentUser.username {
+            editPostButton.isHidden = true
+        }
         usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
         postBodyTextView.text = post.body
@@ -39,6 +47,9 @@ class PostContainerViewController: UIViewController {
     @IBOutlet weak var postBodyTextView: UITextView!
     
     
+    @IBAction func editPost(_ sender: Any) {
+    }
+    @IBOutlet weak var editPostButton: UIButton!
     
     
     var post: Post? {
@@ -46,4 +57,5 @@ class PostContainerViewController: UIViewController {
             updateViews()
         }
     }
+    var currentUser: User?
 }

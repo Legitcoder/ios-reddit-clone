@@ -92,6 +92,7 @@ class CommentTableViewController: UITableViewController {
         } else if segue.identifier == "PostViewContainer" {
             guard let destination = segue.destination as? PostContainerViewController else { return }
             destination.post = post
+            destination.currentUser = currentUser
         }
     }
 
