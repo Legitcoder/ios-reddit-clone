@@ -18,23 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgl-9a-lD3">
-                                <rect key="frame" x="16" y="529" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BTq-Sq-pyA" kind="show" identifier="SignUp" id="WNT-SU-Xo0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgj-Lh-BI1">
-                                <rect key="frame" x="122" y="583" width="130" height="30"/>
-                                <state key="normal" title="Log In"/>
-                                <connections>
-                                    <segue destination="NQJ-e0-Cvr" kind="show" identifier="LogIn" id="LI7-cK-kWh"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hZr-ZH-tC2">
+                                <rect key="frame" x="5" y="529" width="365" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgl-9a-lD3">
+                                        <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BTq-Sq-pyA" kind="show" identifier="SignUp" id="WNT-SU-Xo0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgj-Lh-BI1">
+                                        <rect key="frame" x="161.5" y="38" width="42" height="30"/>
+                                        <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <segue destination="NQJ-e0-Cvr" kind="show" identifier="LogIn" id="LI7-cK-kWh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wgl-9a-lD3" secondAttribute="trailing" id="497-FY-TkI"/>
+                                    <constraint firstItem="Wgl-9a-lD3" firstAttribute="leading" secondItem="hZr-ZH-tC2" secondAttribute="leading" id="hZo-5t-3xf"/>
+                                </constraints>
+                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redditSignUp" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-rO-uBz">
                                 <rect key="frame" x="57.5" y="254" width="254" height="227"/>
                                 <constraints>
@@ -49,19 +58,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1TD-vh-SN1" firstAttribute="trailing" secondItem="bX2-va-aaP" secondAttribute="trailing" constant="88" id="29N-Xe-rc5"/>
-                            <constraint firstItem="1TD-vh-SN1" firstAttribute="bottom" secondItem="sgj-Lh-BI1" secondAttribute="bottom" constant="54" id="9fn-j8-wu6"/>
                             <constraint firstItem="fzY-rO-uBz" firstAttribute="top" secondItem="fAc-27-lAe" secondAttribute="top" constant="254" id="CTU-oD-5nd"/>
                             <constraint firstItem="fzY-rO-uBz" firstAttribute="centerX" secondItem="bX2-va-aaP" secondAttribute="centerX" constant="1" id="CWb-cP-wUK"/>
-                            <constraint firstItem="sgj-Lh-BI1" firstAttribute="top" secondItem="Wgl-9a-lD3" secondAttribute="bottom" constant="24" id="G47-QE-gt4"/>
-                            <constraint firstItem="1TD-vh-SN1" firstAttribute="trailing" secondItem="Wgl-9a-lD3" secondAttribute="trailing" constant="16" id="H0y-HN-yh4"/>
-                            <constraint firstItem="sgj-Lh-BI1" firstAttribute="leading" secondItem="1TD-vh-SN1" secondAttribute="leading" constant="122" id="NkJ-ya-er0"/>
-                            <constraint firstItem="Wgl-9a-lD3" firstAttribute="top" secondItem="fzY-rO-uBz" secondAttribute="bottom" constant="48" id="Oai-w4-ywX"/>
                             <constraint firstItem="bX2-va-aaP" firstAttribute="leading" secondItem="1TD-vh-SN1" secondAttribute="leading" constant="80" id="Oc9-py-vlF"/>
                             <constraint firstItem="fzY-rO-uBz" firstAttribute="top" secondItem="bX2-va-aaP" secondAttribute="bottom" constant="32" id="VEL-u8-m26"/>
-                            <constraint firstItem="sgj-Lh-BI1" firstAttribute="top" secondItem="Wgl-9a-lD3" secondAttribute="bottom" constant="24" id="WZL-8e-JhR"/>
-                            <constraint firstItem="Wgl-9a-lD3" firstAttribute="leading" secondItem="1TD-vh-SN1" secondAttribute="leading" constant="16" id="bXA-1N-ucv"/>
-                            <constraint firstItem="1TD-vh-SN1" firstAttribute="trailing" secondItem="sgj-Lh-BI1" secondAttribute="trailing" constant="123" id="f9P-aE-4oR"/>
+                            <constraint firstItem="1TD-vh-SN1" firstAttribute="trailing" secondItem="hZr-ZH-tC2" secondAttribute="trailing" constant="5" id="WtG-NF-yMP"/>
+                            <constraint firstItem="1TD-vh-SN1" firstAttribute="bottom" secondItem="hZr-ZH-tC2" secondAttribute="bottom" constant="70" id="flZ-bP-WN9"/>
                             <constraint firstItem="bX2-va-aaP" firstAttribute="top" secondItem="1TD-vh-SN1" secondAttribute="top" constant="140" id="iPh-r0-dQH"/>
+                            <constraint firstItem="hZr-ZH-tC2" firstAttribute="leading" secondItem="fAc-27-lAe" secondAttribute="leading" constant="5" id="iot-Zt-NMk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1TD-vh-SN1"/>
                     </view>
