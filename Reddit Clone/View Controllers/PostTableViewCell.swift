@@ -14,6 +14,9 @@ class PostTableViewCell: UITableViewCell {
         guard let post = post else { return }
         usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
+        postBodyTextView.textContainer.maximumNumberOfLines = 10
+        postBodyTextView.textContainer.lineBreakMode = .byTruncatingTail
+        postBodyTextView.backgroundColor = Appearance.darkGray
         postBodyTextView.text = post.body
     }
     

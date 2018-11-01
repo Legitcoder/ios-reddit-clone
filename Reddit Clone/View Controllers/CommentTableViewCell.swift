@@ -24,7 +24,10 @@ class CommentTableViewCell: UITableViewCell {
     func updateViews() {
         guard let comment = comment else { return }
         usernameLabel.text = comment.user.username
+        usernameLabel.textColor = .white
+        
         commentBodyTextView.text = comment.body
+        commentBodyTextView.backgroundColor = Appearance.darkGray
     }
     
     @IBOutlet weak var usernameLabel: UILabel!

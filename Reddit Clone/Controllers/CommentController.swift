@@ -37,23 +37,7 @@ class CommentController {
         guard let id = userDictionary["id"] as? String else { return nil }
         return User(id: id, email: email, username: username)
     }
-    
-//    func getCommentsOfPost(post: Post, completion: @escaping (Error?) -> Void) {
-//        ref.child("postComments").child(post.id).observeSingleEvent(of: .value, with: { (snapshot) in
-//            guard let commentsDictionaries = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values else { return }
-//            for commentDictionary in commentsDictionaries {
-//                guard let commentId = commentDictionary["id"] as? String else { return }
-//                self.ref.child("commentUsers").child(commentId).observeSingleEvent(of: .value) { (snapshot) in
-//                    guard let firebaseUser = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values.first else { return }
-//                    guard let user = self.convertUserDictionaryToUser(userDictionary: firebaseUser) else { return }
-//                    guard let comment = self.convertCommentDictionaryToPost(commentDictionary: commentDictionary, post: post, user: user) else { return }
-//                    self.comments.append(comment)
-//                    print("Total Comments: \(self.comments.count)")
-//                    completion(nil)
-//                }
-//            }
-//        })
-//    }
+
     
     func getCommentsOfPost(post: Post, completion: @escaping (Error?) -> Void) {
         ref.child("postComments").child(post.id).observe(.childAdded, with: { (snapshot) in
@@ -64,7 +48,6 @@ class CommentController {
                 guard let user = self.convertUserDictionaryToUser(userDictionary: firebaseUser) else { return }
                 guard let comment = self.convertCommentDictionaryToPost(commentDictionary: commentDictionary, post: post, user: user) else { return }
                 self.comments.append(comment)
-                print("Total Posts: \(self.comments.count)")
                 completion(nil)
             }
         })

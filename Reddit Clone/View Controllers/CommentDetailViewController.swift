@@ -12,7 +12,8 @@ class CommentDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        commentBodyTextView.backgroundColor = Appearance.lightGray
+        view.backgroundColor = Appearance.darkGray
         // Do any additional setup after loading the view.
     }
     

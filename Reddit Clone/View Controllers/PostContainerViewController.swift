@@ -13,6 +13,7 @@ class PostContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        view.backgroundColor = Appearance.darkGray
         // Do any additional setup after loading the view.
     }
     
@@ -21,6 +22,7 @@ class PostContainerViewController: UIViewController {
         usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
         postBodyTextView.text = post.body
+        postBodyTextView.backgroundColor = Appearance.darkGray
     }
 
     /*

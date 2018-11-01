@@ -12,7 +12,8 @@ class PostDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        postBodyTextView.backgroundColor = Appearance.lightGray
+        view.backgroundColor = Appearance.darkGray
         // Do any additional setup after loading the view.
     }
     

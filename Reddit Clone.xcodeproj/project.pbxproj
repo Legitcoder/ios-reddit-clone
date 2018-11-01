@@ -13,6 +13,7 @@
 		A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */; };
 		A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */; };
 		A15E5984218AD06900DDCE99 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5983218AD06900DDCE99 /* UIImage+Extension.swift */; };
+		A15E5988218B75D200DDCE99 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5987218B75D200DDCE99 /* AppearanceHelper.swift */; };
 		A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */; };
 		A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */; };
 		A19CC7A621891ABA00B7CBD0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */; };
@@ -38,6 +39,7 @@
 		A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContainerViewController.swift; sourceTree = "<group>"; };
 		A15E5983218AD06900DDCE99 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		A15E5987218B75D200DDCE99 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceHelper.swift; path = "/Users/moinuddin/Desktop/IOS Projects/Reddit Clone/Reddit Clone/AppearanceHelper.swift"; sourceTree = "<absolute>"; };
 		A19CC79B2187A59100B7CBD0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A19CC7A32189196500B7CBD0 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		A19CC7A521891ABA00B7CBD0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A15E5989218B75D800DDCE99 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A15E5987218B75D200DDCE99 /* AppearanceHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A1C1D7CC21868B9F00DC923D = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		A1C1D7D721868B9F00DC923D /* Reddit Clone */ = {
 			isa = PBXGroup;
 			children = (
+				A15E5989218B75D800DDCE99 /* Helpers */,
 				A1F204072186BCD00067E672 /* Models */,
 				A1F203FE2186BBA20067E672 /* Controllers */,
 				A1F203FD2186BB980067E672 /* View Controllers */,
@@ -306,6 +317,7 @@
 				A1F2040D2186BD090067E672 /* Post.swift in Sources */,
 				A19CC7AA21892DCE00B7CBD0 /* CommentTableViewCell.swift in Sources */,
 				A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */,
+				A15E5988218B75D200DDCE99 /* AppearanceHelper.swift in Sources */,
 				A1F204042186BC8A0067E672 /* CommentController.swift in Sources */,
 				A1F204092186BCDD0067E672 /* User.swift in Sources */,
 			);

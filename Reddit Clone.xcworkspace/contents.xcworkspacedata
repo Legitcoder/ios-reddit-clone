@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/moinuddin/Desktop/IOS Projects/Reddit Clone/Reddit Clone/AppearanceHelper.swift">
+   </FileRef>
+   <FileRef
       location = "group:Reddit Clone.xcodeproj">
    </FileRef>
    <FileRef
