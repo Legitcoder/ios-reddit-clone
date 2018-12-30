@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95F616FABDFEA398D1AF7CD6 /* Pods_Reddit_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACAA4F42D8BC9660AADBE93 /* Pods_Reddit_Clone.framework */; };
-		A13A1C3B218692A7001BC7E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */; };
+		A123340921D874BC0046D4A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A123340821D874BC0046D4A3 /* GoogleService-Info.plist */; };
 		A15E594E218971CC00DDCE99 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */; };
 		A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */; };
 		A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */; };
@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A123340821D874BC0046D4A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContainerViewController.swift; sourceTree = "<group>"; };
@@ -116,12 +116,12 @@
 		A1C1D7D721868B9F00DC923D /* Reddit Clone */ = {
 			isa = PBXGroup;
 			children = (
+				A123340821D874BC0046D4A3 /* GoogleService-Info.plist */,
 				A15E5989218B75D800DDCE99 /* Helpers */,
 				A1F204072186BCD00067E672 /* Models */,
 				A1F203FE2186BBA20067E672 /* Controllers */,
 				A1F203FD2186BB980067E672 /* View Controllers */,
 				A1C1D7D821868B9F00DC923D /* AppDelegate.swift */,
-				A13A1C3A218692A7001BC7E9 /* GoogleService-Info.plist */,
 				A15E598A218B968100DDCE99 /* CALayer+Extension.swift */,
 				A1C1D7DC21868B9F00DC923D /* Main.storyboard */,
 				A1C1D7DF21868BA100DC923D /* Assets.xcassets */,
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C1D7E321868BA100DC923D /* LaunchScreen.storyboard in Resources */,
-				A13A1C3B218692A7001BC7E9 /* GoogleService-Info.plist in Resources */,
+				A123340921D874BC0046D4A3 /* GoogleService-Info.plist in Resources */,
 				A1C1D7E021868BA100DC923D /* Assets.xcassets in Resources */,
 				A1C1D7DE21868B9F00DC923D /* Main.storyboard in Resources */,
 			);

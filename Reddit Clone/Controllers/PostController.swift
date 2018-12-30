@@ -7,61 +7,22 @@
 //
 
 import Foundation
-import Firebase
 
 class PostController {
-    
-    let ref: DatabaseReference!
-    
-    init() {
-        self.ref = Database.database().reference()
-    }
-    
     func createPost(title: String, body: String, user: User) {
         let post =  Post(title: title, body: body, user: user)
-        //Save User to Firebase DataBase
-        ref.child("posts").child(post.id).setValue([ "id": post.id, "title": post.title, "body": post.body ])
-        ref.child("postUsers").child(post.id).child(user.id).setValue([ "id": user.id, "username": user.username, "email": user.email ])
     }
     func updatePost(title: String, body: String, user: User, post: Post) {
         guard let index = posts.index(of: post) else { return }
-        print(posts[index].title)
         posts[index].title = title
         posts[index].body = body
-        //Save User to Firebase DataBase
-        ref.child("posts").child(post.id).updateChildValues([ "id": post.id, "title": title, "body": body ])
     }
     
-    func convertPostDictionaryToPost(postDictionary: [String: Any], user: User) -> Post? {
-        guard let id = postDictionary["id"] as? String else { return nil }
-        guard let title = postDictionary["title"] as? String else { return nil }
-        guard let body = postDictionary["body"] as? String else { return nil }
-        return Post(id: id, title: title, body: body, user: user)
-    }
-    
-    func convertUserDictionaryToUser(userDictionary: [String: Any]) -> User? {
-        guard let username = userDictionary["username"] as? String else { return nil }
-        guard let email = userDictionary["email"] as? String else { return nil }
-        guard let id = userDictionary["id"] as? String else { return nil }
-        return User(id: id, email: email, username: username)
-    }
     
     func getPosts(completion: @escaping (Error?) -> Void) {
-        ref.child("posts").observe(.childAdded, with: { (snapshot) in
-            guard let postDictionary = snapshot.value as? [String: Any] else { return }
-            guard let postId = postDictionary["id"] as? String else { return }
-            self.ref.child("postUsers").child(postId).observeSingleEvent(of: .value) { (snapshot) in
-                guard let firebaseUser = (snapshot.value as? [String : [String : Any]]).map({ $0 })?.values.first else { return }
-                guard let user = self.convertUserDictionaryToUser(userDictionary: firebaseUser) else { return }
-                guard let post = self.convertPostDictionaryToPost(postDictionary: postDictionary, user: user) else { return }
-                self.posts.append(post)
-                print("Total Posts: \(self.posts.count)")
-                completion(nil)
-            }
-            
-            
-        })
+        
     }
     
+    var baseUrl = URL(string: "http://localhost:3000/api/posts")
     var posts: [Post] = []
 }

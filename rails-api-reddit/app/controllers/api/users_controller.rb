@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
 
   #Sign up new user
   def create
-    @user = User.new(params.permit(:username, :email, :password))
+    @user = User.new(user_params)
     if(@user.save)
       :ok
     else
