@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,10 +19,10 @@ class MenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        guard let user = Auth.auth().currentUser else {
-            NSLog("Error retreiving Current User)")
-            return
-        }
+//        guard let user = Auth.auth().currentUser else {
+//            NSLog("Error retreiving Current User)")
+//            return
+//        }
 
         self.performSegue(withIdentifier: "ToPostsViewScreen", sender: self)
     

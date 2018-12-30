@@ -7,17 +7,10 @@
 //
 
 import Foundation
-import Firebase
+
 
 class UserController {
     // Methods for User
-    
-    let ref: DatabaseReference!
-    
-    init() {
-        self.ref = Database.database().reference()
-        self.currentUser = nil
-    }
     
     func fetchCurrentUser(userId: String, completion: @escaping (User, Error?) -> Void) {
     }

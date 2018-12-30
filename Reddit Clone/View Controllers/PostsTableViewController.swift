@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class PostsTableViewController: UITableViewController {
 
@@ -33,16 +33,16 @@ class PostsTableViewController: UITableViewController {
     }
     
     func getUser() {
-        guard let user = Auth.auth().currentUser else {
-            NSLog("Error retreiving Current User)")
-            return
-        }
-        userController.fetchCurrentUser(userId: user.uid) { (user, _) in
-            DispatchQueue.main.async {
-                self.currentUser = user
-                self.title = user.username
-            }
-        }
+//        guard let user = Auth.auth().currentUser else {
+//            NSLog("Error retreiving Current User)")
+//            return
+//        }
+//        userController.fetchCurrentUser(userId: user.uid) { (user, _) in
+//            DispatchQueue.main.async {
+//                self.currentUser = user
+//                self.title = user.username
+//            }
+//        }
     }
     
 

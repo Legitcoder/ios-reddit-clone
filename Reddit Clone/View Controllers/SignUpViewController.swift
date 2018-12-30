@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {

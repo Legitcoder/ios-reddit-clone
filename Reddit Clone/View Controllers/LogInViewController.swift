@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
