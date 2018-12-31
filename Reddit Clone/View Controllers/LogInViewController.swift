@@ -37,11 +37,14 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logIn(_ sender: Any) {
-        guard let email = emailTextField.text,
+        guard let username = emailTextField.text,
             let password = passwordTextField.text else { return }
-        UserController.logIn(email: email, password: password)
+        UserController.shared.logIn(username: username, password: password) { (_) in
+            
+        }
         dismiss(animated: true, completion: nil)
     }
+
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!

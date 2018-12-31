@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
 
   #Sign up new user
   def create
-    debugger
     @user = User.new(user_params)
     if @user.save
       render :ok, json: @controller.to_json

@@ -19,12 +19,12 @@ class MenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-//        guard let user = Auth.auth().currentUser else {
-//            NSLog("Error retreiving Current User)")
-//            return
-//        }
-
-        //self.performSegue(withIdentifier: "ToPostsViewScreen", sender: self)
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue) {
+          self.performSegue(withIdentifier: "ToPostsViewScreen", sender: self)
+        } else {
+            NSLog("Error retreiving Current User)")
+            return
+        }
     
     }
     @IBOutlet weak var redditTitleLogoImageView: UIImageView!

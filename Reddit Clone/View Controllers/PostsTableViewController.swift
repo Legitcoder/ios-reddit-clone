@@ -19,8 +19,12 @@ class PostsTableViewController: UITableViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        UserController.logout()
-        dismiss(animated: true, completion: nil)
+        UserController.shared.logout()
+        guard !UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue) else {
+            NSLog("UserDefaults hasn't been cleared. User Still Exists")
+            return
+        }
+            dismiss(animated: true, completion: nil)
     }
 
     

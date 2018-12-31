@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A123340921D874BC0046D4A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A123340821D874BC0046D4A3 /* GoogleService-Info.plist */; };
 		A123340C21D9998F0046D4A3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123340B21D9998F0046D4A3 /* HTTPMethod.swift */; };
+		A123341221D9BA7E0046D4A3 /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A123341121D9BA7D0046D4A3 /* JWTDecode.framework */; };
+		A123341321D9BA7E0046D4A3 /* JWTDecode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A123341121D9BA7D0046D4A3 /* JWTDecode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A123341621D9BED40046D4A3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123341521D9BED40046D4A3 /* UserDefaultsKeys.swift */; };
 		A15E594E218971CC00DDCE99 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */; };
 		A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */; };
 		A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */; };
@@ -34,9 +37,26 @@
 		A1F2040D2186BD090067E672 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F2040C2186BD090067E672 /* Post.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A123341421D9BA7E0046D4A3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A123341321D9BA7E0046D4A3 /* JWTDecode.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A123340821D874BC0046D4A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A123340B21D9998F0046D4A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		A123340E21D9B7EE0046D4A3 /* JWTDecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTDecode.framework; path = Carthage/Build/iOS/JWTDecode.framework; sourceTree = "<group>"; };
+		A123341121D9BA7D0046D4A3 /* JWTDecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTDecode.framework; path = Carthage/Build/iOS/JWTDecode.framework; sourceTree = "<group>"; };
+		A123341521D9BED40046D4A3 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContainerViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A123341221D9BA7E0046D4A3 /* JWTDecode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +100,17 @@
 			isa = PBXGroup;
 			children = (
 				A123340B21D9998F0046D4A3 /* HTTPMethod.swift */,
+				A123341521D9BED40046D4A3 /* UserDefaultsKeys.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		A123340D21D9B7EE0046D4A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A123340E21D9B7EE0046D4A3 /* JWTDecode.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A15E5989218B75D800DDCE99 /* Helpers */ = {
@@ -94,8 +124,10 @@
 		A1C1D7CC21868B9F00DC923D = {
 			isa = PBXGroup;
 			children = (
+				A123341121D9BA7D0046D4A3 /* JWTDecode.framework */,
 				A1C1D7D721868B9F00DC923D /* Reddit Clone */,
 				A1C1D7D621868B9F00DC923D /* Products */,
+				A123340D21D9B7EE0046D4A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +206,8 @@
 				A1C1D7D121868B9F00DC923D /* Sources */,
 				A1C1D7D221868B9F00DC923D /* Frameworks */,
 				A1C1D7D321868B9F00DC923D /* Resources */,
+				A123341021D9B8030046D4A3 /* ShellScript */,
+				A123341421D9BA7E0046D4A3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +265,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A123341021D9B8030046D4A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/JWTDecode.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/JWTDecode.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1C1D7D121868B9F00DC923D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -252,6 +308,7 @@
 				A1C1D7D921868B9F00DC923D /* AppDelegate.swift in Sources */,
 				A1F203FC2186BB8F0067E672 /* LogInViewController.swift in Sources */,
 				A1F2040D2186BD090067E672 /* Post.swift in Sources */,
+				A123341621D9BED40046D4A3 /* UserDefaultsKeys.swift in Sources */,
 				A19CC7AA21892DCE00B7CBD0 /* CommentTableViewCell.swift in Sources */,
 				A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */,
 				A15E5988218B75D200DDCE99 /* AppearanceHelper.swift in Sources */,
@@ -404,6 +461,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WH6XTF8JG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Reddit Clone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,6 +483,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WH6XTF8JG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Reddit Clone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
