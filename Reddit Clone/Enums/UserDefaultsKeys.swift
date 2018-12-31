@@ -11,6 +11,6 @@ import Foundation
 enum UserDefaultsKeys: String {
     case username
     case userId
-    case jwtSignature
+    case token
     case isLoggedIn
 }

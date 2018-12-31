@@ -14,6 +14,7 @@ class UserController {
     
     static let shared = UserController()
     
+    //Signup User
     func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void){
         let url = baseUrl.appendingPathComponent("users")
         var request = URLRequest(url: url)
@@ -52,6 +53,10 @@ class UserController {
         }.resume()
     }
     
+    var token: String? {
+         return UserDefaults.standard.string(forKey: UserDefaultsKeys.token.rawValue)
+    }
+    
     //Login User
     func logIn(username: String, password: String, completion: @escaping (Error?) -> Void = {_ in }) {
         let url = baseUrl.appendingPathComponent("tokens")
@@ -88,15 +93,13 @@ class UserController {
             }
             
             do {
-                let token = try JSONDecoder().decode(JWT.self, from: data)
-                let jwt = try decode(jwt: token.jwt)
+                let jwtToken = try JSONDecoder().decode(JWT.self, from: data)
+                let jwt = try decode(jwt: jwtToken.jwt)
+                print(jwt)
                 let userId = jwt.body["id"] as! Int
                 let username = jwt.body["username"] as! String
-                guard let signature = jwt.signature else {
-                    NSLog("Missing JWT Signature when logging in")
-                    return
-                }
-                self.saveCurrentUser(userId: userId, username: username, signature: signature)
+                let token = jwt.string
+                self.saveCurrentUser(userId: userId, username: username, token: token)
             } catch {
                 NSLog("Error decoding JSON Web Token \(error)")
                 completion(error)
@@ -104,11 +107,14 @@ class UserController {
             }
             
             NSLog("Successfully logged in User")
+            
+            completion(nil)
         }.resume()
     }
     
-    private func saveCurrentUser(userId: Int, username: String, signature: String) {
-        UserDefaults.standard.set(signature, forKey: UserDefaultsKeys.jwtSignature.rawValue)
+    
+    private func saveCurrentUser(userId: Int, username: String, token: String) {
+        UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token.rawValue)
         UserDefaults.standard.set(userId, forKey: UserDefaultsKeys.userId.rawValue)
         UserDefaults.standard.set(username, forKey: UserDefaultsKeys.username.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)

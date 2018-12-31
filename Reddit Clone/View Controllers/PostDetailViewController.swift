@@ -27,13 +27,14 @@ class PostDetailViewController: UIViewController {
     
     @IBAction func savePost(_ sender: Any) {
         guard let title = postTitleTextField.text,
-            let body = postBodyTextView.text,
-            let currentUser = currentUser else { return }
+            let body = postBodyTextView.text else { return }
         
         if let post = post {
-            postController?.updatePost(title: title, body: body, user: currentUser, post: post)
+//            postController?.updatePost(title: title, body: body, user: currentUser, post: post)
         } else {
-            postController?.createPost(title: title, body: body, user: currentUser)
+            postController?.createPost(title: title, body: body, completion: { (_) in
+                
+            })
         }
 
         navigationController?.popViewController(animated: true)

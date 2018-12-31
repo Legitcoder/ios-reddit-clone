@@ -411,7 +411,7 @@
                     <navigationItem key="navigationItem" title="Create Post" id="HJN-Y9-wZg">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="6S1-wW-7ig">
                             <connections>
-                                <action selector="savePost:" destination="atA-cC-TXd" id="M9I-go-hGZ"/>
+                                <action selector="savePost:" destination="atA-cC-TXd" id="1hb-dY-Xvy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -635,7 +635,7 @@
         <!--Settings View Controller-->
         <scene sceneID="HxR-aP-ayZ">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xue-1i-vmF" customClass="SettingsViewController" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xue-1i-vmF" customClass="SettingsViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1n-J6-0Vm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
