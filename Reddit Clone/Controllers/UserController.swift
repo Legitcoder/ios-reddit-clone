@@ -14,9 +14,6 @@ class UserController {
     
     static let shared = UserController()
     
-    func fetchCurrentUser(userId: String, completion: @escaping (User, Error?) -> Void) {
-    }
-    
     func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void){
         let url = baseUrl.appendingPathComponent("users")
         var request = URLRequest(url: url)
@@ -55,6 +52,7 @@ class UserController {
         }.resume()
     }
     
+    //Login User
     func logIn(username: String, password: String, completion: @escaping (Error?) -> Void = {_ in }) {
         let url = baseUrl.appendingPathComponent("tokens")
         var request = URLRequest(url: url)
@@ -122,7 +120,7 @@ class UserController {
         UserDefaults.standard.synchronize()
     }
     
-    var baseUrl = URL(string: "http://192.168.1.152:3000/api")!
+    var baseUrl = URL(string: "http://localhost:3000/api")!
     var currentUser: User!
     
 }
