@@ -1,12 +1,18 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   #Sign up new user
   def create
+    debugger
     @user = User.new(user_params)
-    if(@user.save)
-      :ok
+    if @user.save
+      render :ok, json: @controller.to_json
     else
-      :bad_request
+      @errors = @user.errors.full_messages
+      render json: { message: @errors }, status: :unauthorized
     end
   end
 

@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController {
         guard let username = usernameTextField.text,
         let email = emailTextField.text,
         let password = passwordTextField.text else { return }
-        UserController.createUser(username: username, email: email, password: password, completion: { (_) in
+        UserController.shared.signUp(username: username, email: email, password: password, completion: { (_) in
             self.dismiss(animated: true, completion: nil)
         })
 

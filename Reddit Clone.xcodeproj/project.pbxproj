@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A123340921D874BC0046D4A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A123340821D874BC0046D4A3 /* GoogleService-Info.plist */; };
+		A123340C21D9998F0046D4A3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123340B21D9998F0046D4A3 /* HTTPMethod.swift */; };
 		A15E594E218971CC00DDCE99 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */; };
 		A15E59502189724E00DDCE99 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */; };
 		A15E5952218A5D8300DDCE99 /* PostContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		A123340821D874BC0046D4A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A123340B21D9998F0046D4A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		A15E594D218971CC00DDCE99 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		A15E594F2189724E00DDCE99 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		A15E5951218A5D8300DDCE99 /* PostContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContainerViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A123340A21D999630046D4A3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A123340B21D9998F0046D4A3 /* HTTPMethod.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		A15E5989218B75D800DDCE99 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		A1C1D7D721868B9F00DC923D /* Reddit Clone */ = {
 			isa = PBXGroup;
 			children = (
+				A123340A21D999630046D4A3 /* Enums */,
 				A123340821D874BC0046D4A3 /* GoogleService-Info.plist */,
 				A15E5989218B75D800DDCE99 /* Helpers */,
 				A1F204072186BCD00067E672 /* Models */,
@@ -227,6 +238,7 @@
 			files = (
 				A1F204062186BCAA0067E672 /* UserController.swift in Sources */,
 				A19CC79C2187A59100B7CBD0 /* MenuViewController.swift in Sources */,
+				A123340C21D9998F0046D4A3 /* HTTPMethod.swift in Sources */,
 				A19CC7A42189196500B7CBD0 /* PostsTableViewController.swift in Sources */,
 				A15E598B218B968100DDCE99 /* CALayer+Extension.swift in Sources */,
 				A15E5984218AD06900DDCE99 /* UIImage+Extension.swift in Sources */,
