@@ -32,8 +32,7 @@ class PostDetailViewController: UIViewController {
         if let post = post {
 //            postController?.updatePost(title: title, body: body, user: currentUser, post: post)
         } else {
-            postController?.createPost(title: title, body: body, completion: { (_) in
-                
+            PostController.shared.createPost(title: title, body: body, completion: { (_) in
             })
         }
 
@@ -52,13 +51,9 @@ class PostDetailViewController: UIViewController {
     
     @IBOutlet weak var postTitleTextField: UITextField!
     @IBOutlet weak var postBodyTextView: UITextView!
-    
-    var postController: PostController?
-    var currentUser: User?
     var post: Post? {
         didSet {
-            updateViews()
+         updateViews()
         }
     }
-
 }

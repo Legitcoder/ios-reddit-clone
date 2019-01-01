@@ -46,9 +46,9 @@ class UserController {
             
             NSLog("Successfully signed up User")
             
-            self.logIn(username: username, password: password)
-            
-            completion(nil)
+            self.logIn(username: username, password: password, completion: { (_) in
+                completion(nil)
+            })
             
         }.resume()
     }

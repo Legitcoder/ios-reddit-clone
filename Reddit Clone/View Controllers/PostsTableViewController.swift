@@ -14,8 +14,18 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Posts", style: .plain, target: nil, action: nil)
-        getUser()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         getPosts()
+    }
+    
+    func getPosts() {
+        PostController.shared.getPosts { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func logOut(_ sender: Any) {
@@ -25,15 +35,6 @@ class PostsTableViewController: UITableViewController {
             return
         }
             dismiss(animated: true, completion: nil)
-    }
-
-    
-    func getPosts() {
-        postController.getPosts { (_) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
     
     func getUser() {
@@ -54,13 +55,13 @@ class PostsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return postController.posts.count
+        return PostController.shared.posts.count
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
-        let post = postController.posts[indexPath.row]
+        let post = PostController.shared.posts[indexPath.row]
         cell.post = post
         // Configure the cell...
 
@@ -117,8 +118,6 @@ class PostsTableViewController: UITableViewController {
             destination.currentUser = currentUser
         } else if segue.identifier == "NewPost" {
              guard let destination = segue.destination as? PostDetailViewController else { return }
-            destination.currentUser = userController.currentUser
-            destination.postController = postController
         }
         
     }

@@ -27,10 +27,10 @@ class PostContainerViewController: UIViewController {
     func updateViews() {
         guard let post = post, let currentUser = currentUser, isViewLoaded else { return }
         
-        if post.user.username != currentUser.username {
-            editPostButton.isHidden = true
-        }
-        usernameLabel.text = post.user.username
+//        if post.user.username != currentUser.username {
+//            editPostButton.isHidden = true
+//        }
+        usernameLabel.text = UserDefaults.standard.username
         postTitleLabel.text = post.title
         postBodyTextView.text = post.body
         postBodyTextView.backgroundColor = Appearance.darkGray
@@ -44,8 +44,6 @@ class PostContainerViewController: UIViewController {
         if segue.identifier == "EditPost" {
             guard let destination = segue.destination as? PostDetailViewController else { return }
             destination.post = post
-            destination.currentUser = currentUser
-            destination.postController = postController
         }
     }
   
@@ -65,5 +63,4 @@ class PostContainerViewController: UIViewController {
         }
     }
     var currentUser: User?
-    var postController: PostController?
 }
