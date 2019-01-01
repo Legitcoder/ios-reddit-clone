@@ -14,6 +14,10 @@ extension UserDefaults {
         return integer(forKey: UserDefaultsKeys.userId.rawValue)
     }
     
+    var token: String? {
+        return string(forKey: UserDefaultsKeys.token.rawValue)
+    }
+    
     var username: String {
         if let username = string(forKey: UserDefaultsKeys.username.rawValue) {
             return username

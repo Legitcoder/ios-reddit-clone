@@ -21,7 +21,7 @@ class CommentDetailViewController: UIViewController {
         guard let body = commentBodyTextView.text,
             let currentUser = currentUser,
             let post = post else { return }
-        commentController?.createComment(body: body, user: currentUser, post: post)
+        //commentController?.createComment(body: body, user: currentUser, post: post)
         navigationController?.popViewController(animated: true)
     }
     

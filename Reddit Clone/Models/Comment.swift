@@ -10,7 +10,7 @@ import Foundation
 
 
 struct Comment: Codable {
-    let id: String
+    let id: Int
     var body: String
     let user: User
     let post: Post?
@@ -22,7 +22,7 @@ struct Comment: Codable {
         case post
     }
     
-    init(id: String = UUID().uuidString, body: String, user: User, post: Post) {
+    init(id: Int, body: String, user: User, post: Post) {
         self.id = id
         self.user = user
         self.body = body

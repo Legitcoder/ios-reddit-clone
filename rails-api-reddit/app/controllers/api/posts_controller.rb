@@ -13,7 +13,7 @@ class Api::PostsController < ApplicationController
       render :ok, json: {}
     else
       @errors = @post.errors.full_messages
-      render json: { message: @errors }, status: :unprocessable_entitiy
+      render json: { message: @errors }, status: :unprocessable_entity
     end
   end
 

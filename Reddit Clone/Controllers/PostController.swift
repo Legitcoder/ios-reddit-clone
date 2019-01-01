@@ -145,11 +145,6 @@ class PostController {
             
             }.resume()
     }
-//    func updatePost(title: String, body: String, user: User, post: Post) {
-//        guard let index = posts.index(of: post) else { return }
-//        posts[index].title = title
-//        posts[index].body = body
-//    }
     
     
     

@@ -15,24 +15,23 @@ class CommentTableViewController: UITableViewController {
         //commentController.createComment(body: "This is a comment by moin", user: currentUser! , post: post!)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Comments", style: .plain, target: nil, action: nil)
         guard let post = post else { return }
-        CommentController.shared.getCommentsOfPost(post: post) { (comments, _) in
+        PostController.shared.getPostComments(post: post) { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-
         }
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return commentController.comments.count
+        return PostController.shared.comments.count
     }
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
-        let comment = commentController.comments[indexPath.row]
+        let comment = PostController.shared.comments[indexPath.row]
         cell.currentUser = currentUser
         cell.comment = comment
         // Configure the cell...
