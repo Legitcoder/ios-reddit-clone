@@ -15,7 +15,7 @@ class CommentTableViewController: UITableViewController {
         //commentController.createComment(body: "This is a comment by moin", user: currentUser! , post: post!)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Comments", style: .plain, target: nil, action: nil)
         guard let post = post else { return }
-        commentController.getCommentsOfPost(post: post) { (comments, _) in
+        CommentController.shared.getCommentsOfPost(post: post) { (comments, _) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

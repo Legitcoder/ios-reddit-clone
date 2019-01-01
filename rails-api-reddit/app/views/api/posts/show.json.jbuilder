@@ -1,0 +1,1 @@
+json.array! @post_comments, :id, :body

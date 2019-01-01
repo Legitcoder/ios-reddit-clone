@@ -59,6 +59,52 @@ class PostController {
         
     }
     
+    func getPostComments(post: Post, completion: @escaping (Error?) -> Void) {
+        let url = baseUrl.appendingPathComponent("\(post.id)")
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = HTTPMethod.get.rawValue
+        guard let token = token else {
+            NSLog("No JWT Token Set to User Defaults")
+            return
+        }
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            
+            if let error = error {
+                NSLog("There was an error getting all the comments of post: \(error)")
+                completion(error)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                NSLog("Error code from the http request: \(httpResponse.statusCode)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Error retreiving Data")
+                return
+            }
+            
+            do {
+                self.comments = try JSONDecoder().decode([Comment].self, from: data)
+            } catch {
+                NSLog("Error Decoding Comments JSON \(error)")
+                return
+            }
+            
+            NSLog("Successfully fetched all comments of Post")
+            
+            
+            completion(nil)
+            
+            }.resume()
+        
+    }
+    
     func createPost(title: String, body: String, completion: @escaping (Error?) -> Void) {
         var request = URLRequest(url: baseUrl)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -109,4 +155,5 @@ class PostController {
     
     var baseUrl = URL(string: "http://localhost:3000/api/posts")!
     var posts: [Post] = []
+    var comments: [Comment] = []
 }

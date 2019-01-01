@@ -9,11 +9,18 @@
 import Foundation
 
 
-struct Comment {
+struct Comment: Codable {
     let id: String
     var body: String
     let user: User
-    let post: Post
+    let post: Post?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case body
+        case user
+        case post
+    }
     
     init(id: String = UUID().uuidString, body: String, user: User, post: Post) {
         self.id = id

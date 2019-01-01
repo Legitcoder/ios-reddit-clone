@@ -14,6 +14,7 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Posts", style: .plain, target: nil, action: nil)
+        title = UserDefaults.standard.username
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,20 +37,6 @@ class PostsTableViewController: UITableViewController {
         }
             dismiss(animated: true, completion: nil)
     }
-    
-    func getUser() {
-//        guard let user = Auth.auth().currentUser else {
-//            NSLog("Error retreiving Current User)")
-//            return
-//        }
-//        userController.fetchCurrentUser(userId: user.uid) { (user, _) in
-//            DispatchQueue.main.async {
-//                self.currentUser = user
-//                self.title = user.username
-//            }
-//        }
-    }
-    
 
     // MARK: - Table view data source
 
@@ -111,15 +98,9 @@ class PostsTableViewController: UITableViewController {
         if segue.identifier == "ViewPost" {
             guard let destination = segue.destination as? CommentTableViewController else { return }
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let post = postController.posts[indexPath.row]
+            let post = PostController.shared.posts[indexPath.row]
             destination.post = post
-            destination.userController = userController
-            destination.postController = postController
-            destination.currentUser = currentUser
-        } else if segue.identifier == "NewPost" {
-             guard let destination = segue.destination as? PostDetailViewController else { return }
         }
-        
     }
  
     let userController = UserController()

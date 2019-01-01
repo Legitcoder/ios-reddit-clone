@@ -11,14 +11,14 @@ import Foundation
 
 class CommentController {
     
+    static let shared = CommentController()
+    
     func createComment(body: String, user: User, post: Post) {
         let comment = Comment(body: body, user: user, post: post)
     }
     
-    func getCommentsOfPost(post: Post, completion: @escaping ([Comment], Error?) -> Void) {
-        
-    }
+    
 
-    var baseUrl = URL(string: "http://localhost:3000/api/comments")
+    var baseUrl = URL(string: "http://localhost:3000/api/comments")!
     var comments: [Comment] = []
 }

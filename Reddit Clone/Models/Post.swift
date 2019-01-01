@@ -20,6 +20,13 @@ struct Post: Codable {
     var body: String
     var user: User
     
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case body
+        case user
+    }
+    
     init(id: Int, title: String, body: String, user: User) {
         self.id = id
         self.title = title

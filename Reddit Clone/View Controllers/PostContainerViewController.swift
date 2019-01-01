@@ -25,12 +25,15 @@ class PostContainerViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let post = post, let currentUser = currentUser, isViewLoaded else { return }
+        guard let post = post, isViewLoaded else { return }
         
-//        if post.user.username != currentUser.username {
-//            editPostButton.isHidden = true
-//        }
-        usernameLabel.text = UserDefaults.standard.username
+        let currentUserName = UserDefaults.standard.username
+        
+        if post.user.username != currentUserName {
+            editPostButton.isHidden = true
+        }
+        
+        usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
         postBodyTextView.text = post.body
         postBodyTextView.backgroundColor = Appearance.darkGray

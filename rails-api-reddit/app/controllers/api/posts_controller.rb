@@ -18,7 +18,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-
+    @post_comments = Post.find(params[:id]).comments
   end
 
   def update
