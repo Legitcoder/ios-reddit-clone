@@ -12,7 +12,7 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeTextFieldHeight(textField: emailTextField, height: 50)
+        changeTextFieldHeight(textField: usernameTextField, height: 50)
         changeTextFieldHeight(textField: passwordTextField, height: 50)
     }
     
@@ -37,7 +37,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logIn(_ sender: Any) {
-        guard let username = emailTextField.text,
+        guard let username = usernameTextField.text,
             let password = passwordTextField.text else { return }
         UserController.shared.logIn(username: username, password: password) { (_) in
             
@@ -46,7 +46,7 @@ class LogInViewController: UIViewController {
     }
 
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
 }

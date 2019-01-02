@@ -14,6 +14,17 @@ class CommentTableViewController: UITableViewController {
         super.viewDidLoad()
         //commentController.createComment(body: "This is a comment by moin", user: currentUser! , post: post!)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Comments", style: .plain, target: nil, action: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getPostComments()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        PostController.shared.clearComments()
+    }
+    
+    private func getPostComments() {
         guard let post = post else { return }
         PostController.shared.getPostComments(post: post) { (_) in
             DispatchQueue.main.async {
@@ -37,6 +48,10 @@ class CommentTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
  
 

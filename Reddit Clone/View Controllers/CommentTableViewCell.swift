@@ -23,8 +23,9 @@ class CommentTableViewCell: UITableViewCell {
     
     func updateViews() {
         guard let comment = comment else { return }
-        if comment.user.username != currentUser?.username {
-            editButton.isHidden = true
+        let username = UserDefaults.standard.username
+        if comment.user.username != username {
+            self.isUserInteractionEnabled = false
         }
         usernameLabel.text = comment.user.username
         usernameLabel.textColor = .white

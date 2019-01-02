@@ -57,5 +57,4 @@ class CommentController {
     
 
     var baseUrl = URL(string: "http://localhost:3000/api/comments")!
-    var comments: [Comment] = []
 }

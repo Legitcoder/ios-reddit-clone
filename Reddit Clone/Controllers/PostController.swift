@@ -105,6 +105,10 @@ class PostController {
         
     }
     
+    func clearComments() {
+        comments.removeAll()
+    }
+    
     func createPost(title: String, body: String, completion: @escaping (Error?) -> Void) {
         var request = URLRequest(url: baseUrl)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

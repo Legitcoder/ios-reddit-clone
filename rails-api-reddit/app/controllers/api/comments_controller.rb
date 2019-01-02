@@ -2,9 +2,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:comment][:post_id])
-    @comment = Comment.create(comment_params)
-    @post.comments.push(@comment)
-    debugger
+    @comment = @post.comments.create(comment_params)
     if @comment.save
       render :ok, json: {}
     else

@@ -19,9 +19,11 @@ class CommentDetailViewController: UIViewController {
     
     @IBAction func addComment(_ sender: Any) {
         guard let body = commentBodyTextView.text,
-            let currentUser = currentUser,
             let post = post else { return }
-        //commentController?.createComment(body: body, user: currentUser, post: post)
+        let userId = UserDefaults.standard.userId
+        CommentController.shared.createComment(postId: post.id, userId: userId, body: body) { (_) in
+            
+        }
         navigationController?.popViewController(animated: true)
     }
     
