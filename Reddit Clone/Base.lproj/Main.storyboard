@@ -379,17 +379,17 @@
             <objects>
                 <viewController id="atA-cC-TXd" customClass="PostDetailViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZTa-RF-juf">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="301"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-7q-MPG">
-                                <rect key="frame" x="16" y="123" width="398" height="55"/>
+                                <rect key="frame" x="16" y="187" width="343" height="357"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMB-3N-d4S">
-                                <rect key="frame" x="16" y="45" width="398" height="30"/>
+                                <rect key="frame" x="16" y="109" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -428,12 +428,12 @@
         <scene sceneID="nz9-A3-jQL">
             <objects>
                 <tableViewController id="yh4-81-uDv" customClass="CommentTableViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rAK-vv-N3t">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rAK-vv-N3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="21o-ow-CZS">
-                            <rect key="frame" x="0.0" y="99" width="430" height="301"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <connections>
                                 <segue destination="dLh-m2-tkr" kind="embed" identifier="PostViewContainer" id="o1h-Va-FVg"/>
@@ -441,7 +441,7 @@
                         </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="175" id="sMS-14-1PE" customClass="CommentTableViewCell" customModule="Reddit_Clone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="329" width="375" height="175"/>
+                                <rect key="frame" x="0.0" y="228" width="375" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMS-14-1PE" id="7pD-fe-Ys4">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
@@ -501,6 +501,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="postContainerView" destination="21o-ow-CZS" id="cu6-05-bMC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yA9-8k-Nen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,26 +514,26 @@
             <objects>
                 <viewController id="dLh-m2-tkr" customClass="PostContainerViewController" customModule="Reddit_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aGU-mB-CTy">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="301"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0BF-1z-8uf">
-                                <rect key="frame" x="3" y="25" width="424" height="273"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0BF-1z-8uf">
+                                <rect key="frame" x="10" y="25" width="355" height="172"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc3-sf-eqE">
-                                        <rect key="frame" x="0.0" y="0.0" width="424" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="244" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="758" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc3-sf-eqE">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnP-z1-H6w">
-                                        <rect key="frame" x="0.0" y="21.5" width="424" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="242" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="756" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnP-z1-H6w">
+                                        <rect key="frame" x="0.0" y="28.5" width="355" height="102.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M6-sS-UbT">
-                                        <rect key="frame" x="0.0" y="46.5" width="424" height="226.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="747" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M6-sS-UbT">
+                                        <rect key="frame" x="0.0" y="139" width="355" height="33"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -540,28 +543,19 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQQ-6g-U2k">
-                                <rect key="frame" x="313" y="0.0" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="editPost:" destination="dLh-m2-tkr" eventType="touchUpInside" id="CNj-cS-ViX"/>
-                                    <segue destination="atA-cC-TXd" kind="show" identifier="EditPost" id="XR7-nU-wQn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0BF-1z-8uf" firstAttribute="leading" secondItem="U1c-qt-54Y" secondAttribute="leading" constant="3" id="Ba4-jh-zWb"/>
+                            <constraint firstItem="0BF-1z-8uf" firstAttribute="leading" secondItem="U1c-qt-54Y" secondAttribute="leading" constant="10" id="Ba4-jh-zWb"/>
                             <constraint firstItem="0BF-1z-8uf" firstAttribute="top" secondItem="U1c-qt-54Y" secondAttribute="top" constant="25" id="bGs-r9-NIL"/>
                             <constraint firstItem="U1c-qt-54Y" firstAttribute="bottom" secondItem="0BF-1z-8uf" secondAttribute="bottom" constant="3" id="q4z-fR-sBc"/>
-                            <constraint firstItem="U1c-qt-54Y" firstAttribute="trailing" secondItem="0BF-1z-8uf" secondAttribute="trailing" constant="3" id="r0S-NB-ey6"/>
+                            <constraint firstItem="U1c-qt-54Y" firstAttribute="trailing" secondItem="0BF-1z-8uf" secondAttribute="trailing" constant="10" id="r0S-NB-ey6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U1c-qt-54Y"/>
                     </view>
                     <connections>
-                        <outlet property="editPostButton" destination="lQQ-6g-U2k" id="tty-79-U8J"/>
                         <outlet property="postBodyTextView" destination="2M6-sS-UbT" id="fBV-Jf-nHw"/>
+                        <outlet property="postStackView" destination="0BF-1z-8uf" id="oje-AT-3WB"/>
                         <outlet property="postTitleLabel" destination="jnP-z1-H6w" id="zTq-b5-yxI"/>
                         <outlet property="usernameLabel" destination="wc3-sf-eqE" id="LCl-O8-G18"/>
                     </connections>
@@ -677,7 +671,4 @@
         <image name="redditSignUp" width="1131" height="707"/>
         <image name="reddtlogoTitle" width="394" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="XR7-nU-wQn"/>
-    </inferredMetricsTieBreakers>
 </document>

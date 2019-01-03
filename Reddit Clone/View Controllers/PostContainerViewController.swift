@@ -9,13 +9,18 @@
 import UIKit
 
 class PostContainerViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
         view.backgroundColor = Appearance.darkGray
-        // Do any additional setup after loading the view.
     }
+    
+
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var StackViewHC: NSLayoutConstraint!
+    
     override func viewDidAppear(_ animated: Bool) {
         updateViews()
     }
@@ -29,13 +34,10 @@ class PostContainerViewController: UIViewController {
         
         let currentUserName = UserDefaults.standard.username
         
-        if post.user.username != currentUserName {
-            editPostButton.isHidden = true
-        }
-        
         usernameLabel.text = post.user.username
         postTitleLabel.text = post.title
         postBodyTextView.text = post.body
+//        postBodyTextView.frame = CGRect(x: postBodyTextView.frame.origin.x, y: postBodyTextView.frame.origin.y, width: postBodyTextView.frame.width, height: postBodyTextView.frame.height + postTitleLabel.frame.height + usernameLabel.frame.height)
         postBodyTextView.backgroundColor = Appearance.darkGray
     }
 
@@ -59,6 +61,7 @@ class PostContainerViewController: UIViewController {
     }
     @IBOutlet weak var editPostButton: UIButton!
     
+    @IBOutlet weak var postStackView: UIStackView!
     
     var post: Post? {
         didSet {

@@ -16,6 +16,8 @@ class CommentTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Comments", style: .plain, target: nil, action: nil)
     }
     
+    @IBOutlet weak var postContainerView: UIView!
+    
     override func viewDidAppear(_ animated: Bool) {
         getPostComments()
     }
@@ -50,9 +52,7 @@ class CommentTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+    
  
 
     /*
@@ -102,11 +102,23 @@ class CommentTableViewController: UITableViewController {
             destination.commentController = commentController
         } else if segue.identifier == "PostViewContainer" {
             guard let destination = segue.destination as? PostContainerViewController else { return }
+            let textViewFrame = CGRect(x: 0, y: 0, width: destination.view.frame.width, height: 300)
+            
+            let textView = UITextView(frame: textViewFrame )
+            textView.text = post!.body
+            textView.sizeToFit()
+            
+            
+//
+            let size = CGSize(width: destination.view.frame.width, height: 5000)
+            let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+            let estimatedFrame = NSString(string: "\(post!.user.username)\n \(post!.title)\n \(post!.body)").boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            postContainerView.frame = CGRect(x: 0, y: 0, width: destination.view.frame.width, height: estimatedFrame.height + 120)
             destination.post = post
             destination.currentUser = currentUser
         }
     }
-
+    
     
     var postController: PostController?
     var userController: UserController?
@@ -115,3 +127,4 @@ class CommentTableViewController: UITableViewController {
     var currentUser: User?
 
 }
+
