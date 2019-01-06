@@ -26,7 +26,7 @@ comments = []
 
 #Create 10 posts
 for _ in 0..10
-  post = Post.create(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ullamcorper lobortis porttitor. In vitae quam nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec maximus bibendum volutpat. Nullam ornare urna dolor, at ultrices lorem consequat in. Su", body: Faker::Lorem.paragraph(rand(10..40)), user: users[rand(0..2)])
+  post = Post.create(title: Faker::Lorem.characters(rand(0..300)), body: Faker::Lorem.paragraph(rand(10..40)), user: users[rand(0..2)])
   post.save()
   posts << post
 end

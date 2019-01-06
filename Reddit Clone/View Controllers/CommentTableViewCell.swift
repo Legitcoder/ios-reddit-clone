@@ -20,6 +20,7 @@ class CommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
     
     func updateViews() {
         guard let comment = comment else { return }

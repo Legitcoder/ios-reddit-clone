@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e86bf640-d278-454a-b8c8-e85a0ad7ec8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/api/comments_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/api/posts_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers/authentication_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/comment.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/post.rb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/views/api/posts/index.json.jbuilder" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/views/api/posts/show.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/api/users/index.json.jbuilder" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/views/api/users/show.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20181230032819_create_posts.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20181230032954_create_comments.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/controllers/api/comments_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/controllers/api/posts_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/comments.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/posts.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/comment_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/post_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
@@ -53,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="612">
+              <caret line="28" column="51" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -146,10 +160,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="663" />
-    <option name="y" value="1103" />
-    <option name="width" value="1920" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="388" />
+    <option name="y" value="1143" />
+    <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectView">
@@ -386,15 +400,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546137773455</updated>
-      <workItem from="1546137774646" duration="28869000" />
+      <workItem from="1546137774646" duration="29947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28869000" />
+    <option name="totallyTimeSpent" value="29947000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="388" y="1103" width="1440" height="877" extended-state="6" />
+    <frame x="388" y="1143" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -603,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="612">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="51" />
         </state>
       </provider>
     </entry>

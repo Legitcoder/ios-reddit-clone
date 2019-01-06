@@ -119,7 +119,6 @@ class CommentTableViewController: UITableViewController {
         }
     }
     
-    
     var postController: PostController?
     var userController: UserController?
     let commentController = CommentController()
